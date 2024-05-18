@@ -12,6 +12,8 @@ definitions:
         type: integer
       lessonId:
         type: integer
+      score:
+        type: integer
     type: object
   model.ErrorResponse:
     properties:
@@ -150,6 +152,8 @@ paths:
           description: Не удалось добавить уроки
           schema:
             $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - CookieAuth: []
       summary: Добавить пройденный урок в прогресс юзера
       tags:
       - Lessons
@@ -318,6 +322,27 @@ paths:
       summary: Получить уроки для курса
       tags:
       - Tasks
+  /v1/discount_promo:
+    post:
+      consumes:
+      - application/json
+      description: Отправляет промокод со скидкой на почту.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Промокод отправлен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "500":
+          description: Не удалось отправить промокод
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: Получить промокод для скидки
+      tags:
+      - Promo
   /v1/forgot:
     post:
       consumes:

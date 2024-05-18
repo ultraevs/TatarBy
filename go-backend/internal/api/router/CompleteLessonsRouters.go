@@ -7,7 +7,7 @@ import (
 )
 
 func (router *Router) CompleteLessonsRoutes(group *gin.RouterGroup) {
-	group.POST("/AddCompletedLesson", controller.AddCompletedLesson)
+	group.POST("/AddCompletedLesson", middleware.CookieMiddleware(), controller.AddCompletedLesson)
 	group.POST("/GetCompletedLessons", middleware.CookieMiddleware(), controller.GetAllCompletedLessons)
 	group.POST("/GetCompletedLessonsByCourse", middleware.CookieMiddleware(), controller.GetCompletedLessonsByCourse)
 }

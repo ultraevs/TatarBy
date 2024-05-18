@@ -4,6 +4,7 @@ import (
 	"app/internal/database"
 	"app/internal/model"
 	"database/sql"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
@@ -18,6 +19,7 @@ import (
 // @Success 200 {array} model.Lesson "Урок добавлен"
 // @Failure 500 {object} model.ErrorResponse "Не удалось добавить уроки"
 // @Tags Lessons
+// @Security CookieAuth
 // @Router /v1/AddCompletedLesson [post]
 func AddCompletedLesson(context *gin.Context) {
 	var completeLesson model.CompleteLesson
@@ -29,11 +31,13 @@ func AddCompletedLesson(context *gin.Context) {
 	Email := context.MustGet("Email").(string)
 	err := database.Db.QueryRow("SELECT id FROM tatarby_users WHERE email = $1", Email).Scan(&userID)
 	if err != nil {
+		fmt.Println(err)
 		return
 	}
 
 	_, err = database.Db.Exec("INSERT INTO tatarby_completed_lessons (user_id, course_id, lesson_id, score) VALUES ($1, $2, $3, $4)", userID, completeLesson.CourseID, completeLesson.LessonID, completeLesson.Score)
 	if err != nil {
+		fmt.Println(err)
 		return
 	}
 

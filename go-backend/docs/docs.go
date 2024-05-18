@@ -17,6 +17,11 @@ const docTemplate = `{
     "paths": {
         "/v1/AddCompletedLesson": {
             "post": {
+                "security": [
+                    {
+                        "CookieAuth": []
+                    }
+                ],
                 "description": "Добавляет новый урок в список уроков юзера",
                 "consumes": [
                     "application/json"
@@ -302,6 +307,40 @@ const docTemplate = `{
                     },
                     "500": {
                         "description": "Не удалось получить уроки",
+                        "schema": {
+                            "$ref": "#/definitions/model.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/discount_promo": {
+            "post": {
+                "security": [
+                    {
+                        "CookieAuth": []
+                    }
+                ],
+                "description": "Отправляет промокод со скидкой на почту.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Promo"
+                ],
+                "summary": "Получить промокод для скидки",
+                "responses": {
+                    "200": {
+                        "description": "Промокод отправлен",
+                        "schema": {
+                            "$ref": "#/definitions/model.CodeResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Не удалось отправить промокод",
                         "schema": {
                             "$ref": "#/definitions/model.ErrorResponse"
                         }
@@ -899,6 +938,9 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "lessonId": {
+                    "type": "integer"
+                },
+                "score": {
                     "type": "integer"
                 }
             }
