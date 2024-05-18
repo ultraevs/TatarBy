@@ -223,3 +223,65 @@ func PromoTemplate(promo string) string {
 	</html>
 	`
 }
+
+func DiscountPromoTemplate(promo string) string {
+	return `
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <style>
+	        body {
+	            font-family: Arial, sans-serif;
+	            margin: 40px;
+	            background-color: #f4f4f9;
+	            color: #333;
+	        }
+	        .container {
+	            background-color: #fff;
+	            border: 1px solid #dedede;
+	            border-radius: 5px;
+	            padding: 20px;
+	            margin-top: 20px;
+	        }
+	        h1 {
+	            color: #4A90E2;
+	        }
+	        a {
+	            color: #4A90E2;
+	            text-decoration: none;
+	            border-bottom: 1px solid #4A90E2;
+	            transition: color 0.5s, border-bottom-color 0.5s;
+	        }
+	        a:hover, a:focus {
+	            color: #d35400;
+	            border-bottom-color: #d35400;
+	        }
+	        footer {
+	            margin-top: 20px;
+	            font-size: 12px;
+	            text-align: center;
+	            color: #999;
+	        }
+			.promo-code {
+			display: inline-block;
+			padding: 5px 10px;
+			background-color: #f4f4f9;
+			border: 1px solid #4A90E2;
+			border-radius: 5px;
+			font-weight: bold;
+			color: #4A90E2;
+			}
+	    </style>
+	</head>
+	<body>
+	    <div class="container">
+    		<h1>Здравствуйте, поздравляем с прохождением вступительного теста.</h1>
+    		<p>Ваш промокод: <span class="promo-code">` + promo + `</span></p>
+		</div>
+	    <footer>
+	        © 2024 TatarBY. Все права защищены.
+	    </footer>
+	</body>
+	</html>
+	`
+}

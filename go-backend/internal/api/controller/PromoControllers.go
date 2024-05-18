@@ -113,3 +113,29 @@ func RedeemPromo(context *gin.Context) {
 
 	context.JSON(http.StatusOK, gin.H{"success": "Promo Code used"})
 }
+
+// DiscountPromo Скидочный промокод.
+// @Summary Получить промокод для скидки
+// @Description Отправляет промокод со скидкой на почту.
+// @Accept json
+// @Produce json
+// @Success 200 {object} model.CodeResponse "Промокод отправлен"
+// @Failure 500 {object} model.ErrorResponse "Не удалось отправить промокод"
+// @Tags Promo
+// @Security CookieAuth
+// @Router /v1/discount_promo [post]
+func DiscountPromo(context *gin.Context) {
+	Email := context.MustGet("Email").(string)
+	sender := NewGmailSender("TatarBY", os.Getenv("EMAIL_ADDRESS"), os.Getenv("EMAIL_PASSWORD"))
+
+	promoCode := generatePromo()
+	subject := "Промокод на скидку"
+	content := fmt.Sprintf(templates.DiscountPromoTemplate(promoCode))
+	to := []string{Email}
+	err := sender.SendEmail(subject, content, to, nil, nil)
+	if err != nil {
+		fmt.Println(err)
+		context.JSON(http.StatusInternalServerError, gin.H{"error": "Error with sending email"})
+		return
+	}
+}
