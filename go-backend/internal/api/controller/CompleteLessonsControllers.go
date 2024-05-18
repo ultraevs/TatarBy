@@ -32,7 +32,7 @@ func AddCompletedLesson(context *gin.Context) {
 		return
 	}
 
-	_, err = database.Db.Exec("INSERT INTO tatarby_completed_lessons (user_id, course_id, lesson_id) VALUES ($1, $2, $3)", userID, completeLesson.CourseID, completeLesson.LessonID)
+	_, err = database.Db.Exec("INSERT INTO tatarby_completed_lessons (user_id, course_id, lesson_id, score) VALUES ($1, $2, $3, $4)", userID, completeLesson.CourseID, completeLesson.LessonID, completeLesson.Score)
 	if err != nil {
 		return
 	}
