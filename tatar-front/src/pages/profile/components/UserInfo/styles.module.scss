@@ -1,0 +1,39 @@
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 20px;
+
+  &__avatar {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    border-radius: 999px;
+    background: var(--common-white);
+    opacity: 0.1;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__data {
+    p {
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.3);
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+}

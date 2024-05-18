@@ -1,0 +1,134 @@
+.container {
+  padding: 285px 164px;
+  display: grid;
+  grid-template-columns: 470px 470px;
+  grid-row: 1;
+  gap: 20px;
+
+  justify-content: center;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    h3 {
+      font-family: "Geist", sans-serif;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+    }
+
+    p {
+      opacity: 0.6;
+
+      color: #fff;
+      font-family: "Geist", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__frame {
+    background-image: url("./../../assets/jpg/Frame2.jpg");
+    border-radius: 40px;
+    height: 528px;
+
+    img {
+      border-radius: 40px;
+    }
+
+    &__vector {
+      z-index: -1;
+      position: relative;
+      top: -530px;
+      stroke-width: 30px;
+      stroke: #007dd7;
+      filter: blur(250px);
+    }
+
+    &__overflow {
+      max-height: 468px;
+      width: 470px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      margin-top: 32px;
+
+      // Styling the scrollbar
+      &::-webkit-scrollbar {
+        opacity: 0.6;
+        width: 6px; // Width of the scrollbar
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1); // Color of the track
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px; // Rounded corners of the scrollbar thumb
+      }
+    }
+
+    &__vector {
+      position: relative;
+      right: 400px;
+      top: -1000px;
+      stroke-width: 30px;
+      stroke: #007dd7;
+      filter: blur(250px);
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    width: 470px;
+    height: 52px;
+    padding: 0 65px 0 42px;
+    flex-shrink: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
+
+    p {
+      opacity: 0.5;
+      color: #fff;
+
+      font-family: "Geist", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &__nickname {
+      margin: 0 auto 0 52px;
+    }
+  }
+
+  .item-0 {
+    p:nth-child(1) {
+      color: #d7cb74;
+      opacity: 0.8;
+    }
+  }
+
+  .item-1 {
+    p:nth-child(1) {
+      color: #e8e8e8;
+      opacity: 0.8;
+    }
+  }
+
+  .item-2 {
+    p:nth-child(1) {
+      color: #8d4821;
+      opacity: 0.8;
+    }
+  }
+}
