@@ -1,0 +1,79 @@
+.quizItem {
+  width: 100%;
+  padding: 42px;
+  border-radius: 24px;
+  border: 1px solid #161616;
+  background: rgba(255, 255, 255, 0.03);
+
+  &__title {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #fff;
+    opacity: 0.8;
+
+    p {
+      color: var(--common-white);
+      font-family: GeistRegular;
+      font-size: 20px;
+    }
+  }
+
+  &__content {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__items {
+      width: 428px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__item {
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: GeistRegular;
+        font-size: 16px;
+      }
+    }
+
+    &__progress {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &__submit {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+
+        button {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          outline: none;
+          color: var(--common-white);
+          font-family: GeistRegular;
+          font-size: 16px;
+          opacity: 0.8;
+        }
+
+        p {
+          color: var(--common-white);
+          font-family: GeistRegular;
+          font-size: 16px;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.profile {
+  padding: 44px 0px 277.8px;
+
+  &__activity  {
+    margin-top: 32px;
+
+    &__items {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  &__results {
+    margin-top: 24px;
+
+    &__items {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 307px auto;
+      column-gap: 20px;
+    }
+  }
+}
