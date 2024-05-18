@@ -24,12 +24,12 @@ import (
 func UserInfo(context *gin.Context) {
 	Email := context.MustGet("Email").(string)
 	var user model.UserInfo
-	err := database.Db.QueryRow("SELECT email, name, photo_url FROM tatarby_users WHERE email = $1", Email).Scan(&user.Email, &user.Name, &user.Photo)
+	err := database.Db.QueryRow("SELECT email, name, photo_url, referral_link FROM tatarby_users WHERE email = $1", Email).Scan(&user.Email, &user.Name, &user.Photo, &user.Ref)
 	photo := ""
 	if user.Photo.Valid {
 		photo = user.Photo.String
 	}
-	context.JSON(http.StatusOK, gin.H{"email": user.Email, "name": user.Name, "photo": photo})
+	context.JSON(http.StatusOK, gin.H{"email": user.Email, "name": user.Name, "photo": photo, "referal": user.Ref})
 	fmt.Println(err)
 }
 
