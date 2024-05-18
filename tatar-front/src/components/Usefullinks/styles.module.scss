@@ -1,0 +1,116 @@
+.usefullinks {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        &__mockup {
+            width: 469px;
+            height: 472px;
+            border-radius: 36px;
+            background: linear-gradient(to bottom right, #041420 0%, #021A2B 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #041420 0%, #021A2B 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #041420 0%, #021A2B 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #041420 0%, #021A2B 50%) top right / 50% 50% no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            img {
+                position: absolute;
+            }
+
+            &__dict {
+                position: absolute;
+                color: #F3F0A6;
+
+                text-align: center;
+                font-family: "PT Serif", sans-serif;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.64px;
+            }
+
+            button {
+                cursor: pointer;
+                display: none;
+                padding: 12px 32px;
+                border-radius: 6px;
+                border: 1px solid #232323;
+                background: rgba(45, 45, 56, 0.40);
+
+                color: #CECECE;
+                font-family: "Geist", sans-serif;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 24px;
+
+                margin-top: 256px;
+
+                transition: all 0.3s ease-out;
+
+            }
+
+            button:hover {
+                border-radius: 6px;
+                border: 1px solid #2B2B2B;
+                background: rgba(45, 45, 56, 0.60);
+
+                transition: all 0.3s ease-out;
+            }
+
+            transition: all 0.3s ease-out;
+        }
+
+        &__mockup:hover {
+            opacity: 0.6;
+            
+            button {
+                display: block;
+            }
+
+            img {
+                opacity: 0.9;
+            }
+
+            p {
+                opacity: 0.4;
+            }
+
+            transition: all 0.3s ease-out;
+
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            h2 {
+                color: #FFF;
+                font-family: "Geist", sans-serif;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 100%;
+            }
+
+            p {
+                opacity: 0.6;
+                color: #FFF;
+                font-family: "Geist", sans-serif;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+        }
+    }
+}

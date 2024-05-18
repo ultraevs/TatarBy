@@ -1,0 +1,75 @@
+.discounts {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid #161616;
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+  
+    &__block {
+      margin: 64px 0px 153px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      h1 {
+        color: var(--common-white);
+        font-family: GrandisExtendedMedium;
+        font-size: 32px;
+        letter-spacing: 0.64px;
+      }
+      p{
+        margin-top: 16px;
+        opacity: 0.6;
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 16px;
+      }
+  
+      div {
+  
+        span {
+          width: 580px;
+          color: var(--common-white);
+          font-family: "Inter", sans-serif;
+          font-size: 24px;
+          font-weight: 500;
+          opacity: 0.8;
+        }
+      }
+    }
+  
+    &__blur1 {
+      z-index: -1;
+      position: absolute;
+      top: 68px;
+      left: 358px;
+      width: 245px;
+      height: 67px;
+      background: #00b86b;
+      filter: blur(90px);
+    }
+  
+    &__blur2 {
+      z-index: -2;
+      position: absolute;
+      top: 102px;
+      right: 237px;
+      width: 120px;
+      height: 80px;
+      background: #7db800;
+      filter: blur(90px);
+    }
+  
+    &__blur3 {
+      z-index: -2;
+      position: absolute;
+      top: 102px;
+      left: 237px;
+      width: 120px;
+      height: 80px;
+      background: #7db800;
+      filter: blur(90px);
+    }
+  }
+  

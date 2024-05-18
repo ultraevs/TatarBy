@@ -28,7 +28,7 @@ export const getProgress = async () => {
 export const getStats = async () => {
   try {
     const response = await axios.get(
-      "https://fromshmyaksto52withlove.shmyaks.ru/v1/rating",
+      "https://tatarby.shmyaks.ru/v1/rating",
       {
         headers: {
           "Content-Type": "application/json",

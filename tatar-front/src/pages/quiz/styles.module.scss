@@ -1,0 +1,18 @@
+.test{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+
+    h2{
+        margin-top: 84px;
+
+        opacity: 0.6;
+        color: #FFF;
+        font-family: "Geist", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
