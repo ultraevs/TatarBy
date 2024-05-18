@@ -17,3 +17,10 @@ services:
     ports:
       - "8090:8090"
     network_mode: host
+  bot:
+    build:
+      context: ../python-backend/
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"
+    command: python core.py
