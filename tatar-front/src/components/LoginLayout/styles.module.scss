@@ -1,0 +1,25 @@
+.loginLayout {
+  // position: relative;
+  &__main {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__vector{
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  // &__blur1 {
+  //   position: absolute;
+  //   top: 335px;
+  //   left: 434px;
+  //   width: 572px;
+  //   height: 195px;
+  //   background: #007dd7a3;
+  //   filter: blur(180px);
+  // }
+}

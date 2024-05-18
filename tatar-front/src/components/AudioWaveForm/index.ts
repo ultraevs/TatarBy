@@ -1,0 +1,1 @@
+export { AudioWaveForm } from "./AudioWaveForm";

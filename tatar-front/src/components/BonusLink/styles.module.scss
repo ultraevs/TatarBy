@@ -1,0 +1,43 @@
+.bonusLink {
+  width: 470px;
+  padding: 16px 61px 36px 24px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+
+  &__top {
+    p {
+      color: var(--common-white);
+      font-family: GeistRegular;
+      font-size: 16px;
+      opacity: 0.7;
+    }
+  }
+
+  &__content {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+
+    &__time {
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--common-white);
+      font-family: GeistRegular;
+      font-size: 16px;
+      opacity: 0.3;
+    }
+
+    &__submit {
+      height: 44px;
+      padding: 0px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

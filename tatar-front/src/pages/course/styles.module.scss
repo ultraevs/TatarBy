@@ -1,0 +1,75 @@
+.course {
+  padding: 82px 0px 364px;
+
+  &__content {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    &__text {
+      h2 {
+        color: var(--common-white);
+        font-family: GeistMedium;
+        font-size: 36px;
+        line-height: 36px;
+      }
+
+      p {
+        margin-top: 32px;
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 20px;
+        line-height: 24.8px;
+        opacity: 0.6;
+      }
+    }
+
+    &__photo {
+      width: 100%;
+      height: 528px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 36px;
+      border: 1px solid rgba(22, 22, 22, 1);
+    }
+  }
+}
+
+.lessons {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    border-bottom: 1px solid rgba(56, 56, 56, 1);
+    div {
+      max-width: 960px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 20px;
+        line-height: 24.8px;
+        opacity: 0.9;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 20px;
+        line-height: 24.8px;
+        opacity: 0.9;
+      }
+    }
+  }
+}
