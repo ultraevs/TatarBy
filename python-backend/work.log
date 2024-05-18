@@ -1,0 +1,81 @@
+2024-05-19 01:15:52,116 - INFO - Start creating a new auth key on DC2
+2024-05-19 01:15:52,116 - INFO - Connecting...
+2024-05-19 01:15:52,182 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:15:54,527 - INFO - Done auth key exchange: DhGenOk
+2024-05-19 01:15:54,528 - INFO - Disconnected
+2024-05-19 01:15:54,681 - INFO - Connecting...
+2024-05-19 01:15:54,740 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:15:54,741 - INFO - NetworkTask started
+2024-05-19 01:15:55,341 - INFO - Session initialized: Layer 158
+2024-05-19 01:15:55,341 - INFO - Device: CPython 3.10.9 - Pyrogram 2.0.106
+2024-05-19 01:15:55,341 - INFO - System: Windows 10 (en)
+2024-05-19 01:15:55,341 - INFO - Session started
+2024-05-19 01:15:55,365 - INFO - PingTask started
+2024-05-19 01:16:40,612 - INFO - NetworkTask stopped
+2024-05-19 01:16:40,612 - INFO - PingTask stopped
+2024-05-19 01:16:40,613 - INFO - Close exception: ConnectionAbortedError [WinError 1236] Подключение к сети было разорвано локальной системой
+2024-05-19 01:16:40,613 - INFO - Disconnected
+2024-05-19 01:16:40,614 - INFO - Session stopped
+2024-05-19 01:16:40,614 - INFO - Connecting...
+2024-05-19 01:16:40,674 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:16:40,677 - INFO - NetworkTask started
+2024-05-19 01:16:40,927 - INFO - Session initialized: Layer 158
+2024-05-19 01:16:40,928 - INFO - Device: CPython 3.10.9 - Pyrogram 2.0.106
+2024-05-19 01:16:40,928 - INFO - System: Windows 10 (en)
+2024-05-19 01:16:40,928 - INFO - Session started
+2024-05-19 01:16:40,928 - INFO - PingTask started
+2024-05-19 01:16:41,430 - INFO - PingTask stopped
+2024-05-19 01:16:41,430 - INFO - Disconnected
+2024-05-19 01:16:41,430 - INFO - NetworkTask stopped
+2024-05-19 01:16:41,432 - INFO - Session stopped
+2024-05-19 01:17:16,761 - INFO - Start creating a new auth key on DC2
+2024-05-19 01:17:16,762 - INFO - Connecting...
+2024-05-19 01:17:16,821 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:17:19,209 - INFO - Done auth key exchange: DhGenOk
+2024-05-19 01:17:19,211 - INFO - Disconnected
+2024-05-19 01:17:19,369 - INFO - Connecting...
+2024-05-19 01:17:19,432 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:17:19,439 - INFO - NetworkTask started
+2024-05-19 01:17:19,828 - INFO - Session initialized: Layer 158
+2024-05-19 01:17:19,829 - INFO - Device: CPython 3.10.9 - Pyrogram 2.0.106
+2024-05-19 01:17:19,830 - INFO - System: Windows 10 (en)
+2024-05-19 01:17:19,830 - INFO - Session started
+2024-05-19 01:17:19,855 - INFO - PingTask started
+2024-05-19 01:21:12,624 - INFO - PingTask stopped
+2024-05-19 01:21:12,625 - INFO - Disconnected
+2024-05-19 01:21:12,625 - INFO - NetworkTask stopped
+2024-05-19 01:21:12,626 - INFO - Session stopped
+2024-05-19 01:21:25,863 - INFO - Start creating a new auth key on DC2
+2024-05-19 01:21:25,863 - INFO - Connecting...
+2024-05-19 01:21:25,929 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:21:27,816 - INFO - Done auth key exchange: DhGenOk
+2024-05-19 01:21:27,817 - INFO - Disconnected
+2024-05-19 01:21:27,912 - INFO - Connecting...
+2024-05-19 01:21:27,982 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:21:27,991 - INFO - NetworkTask started
+2024-05-19 01:21:28,449 - INFO - Session initialized: Layer 158
+2024-05-19 01:21:28,456 - INFO - Device: CPython 3.10.9 - Pyrogram 2.0.106
+2024-05-19 01:21:28,456 - INFO - System: Windows 10 (en)
+2024-05-19 01:21:28,456 - INFO - Session started
+2024-05-19 01:21:28,472 - INFO - PingTask started
+2024-05-19 01:22:34,303 - INFO - PingTask stopped
+2024-05-19 01:22:34,303 - INFO - Disconnected
+2024-05-19 01:22:34,303 - INFO - NetworkTask stopped
+2024-05-19 01:22:34,303 - INFO - Session stopped
+2024-05-19 01:23:02,241 - INFO - Start creating a new auth key on DC2
+2024-05-19 01:23:02,242 - INFO - Connecting...
+2024-05-19 01:23:02,311 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:23:04,476 - INFO - Done auth key exchange: DhGenOk
+2024-05-19 01:23:04,476 - INFO - Disconnected
+2024-05-19 01:23:04,596 - INFO - Connecting...
+2024-05-19 01:23:04,662 - INFO - Connected! Production DC2 - IPv4
+2024-05-19 01:23:04,667 - INFO - NetworkTask started
+2024-05-19 01:23:05,172 - INFO - Session initialized: Layer 158
+2024-05-19 01:23:05,172 - INFO - Device: CPython 3.10.9 - Pyrogram 2.0.106
+2024-05-19 01:23:05,172 - INFO - System: Windows 10 (en)
+2024-05-19 01:23:05,172 - INFO - Session started
+2024-05-19 01:23:05,188 - INFO - PingTask started
+2024-05-19 01:24:17,274 - INFO - PingTask stopped
+2024-05-19 01:24:17,274 - INFO - Disconnected
+2024-05-19 01:24:17,274 - INFO - NetworkTask stopped
+2024-05-19 01:24:17,274 - INFO - Session stopped

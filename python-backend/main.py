@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from RecognizeRouter import router
+from ScrapperRouter import router
 import logging
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
@@ -8,7 +8,7 @@ from starlette.responses import Response
 import time
 
 
-app = FastAPI(root_path='/ml', docs_url="/swagger", title="TatarBY")
+app = FastAPI(root_path='/tg', docs_url="/swagger", title="TatarBY")
 origins = ["*"]
 app.include_router(router)
 logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -27,7 +27,6 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
 
         requests = self.requests.get(client_ip, [])
 
-        # Очистка старых запросов
         requests = [timestamp for timestamp in requests if current_time - timestamp < self.time_window]
         self.requests[client_ip] = requests
 
