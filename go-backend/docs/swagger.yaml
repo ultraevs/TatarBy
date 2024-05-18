@@ -1,0 +1,696 @@
+definitions:
+  model.CodeResponse:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    type: object
+  model.CompleteLesson:
+    properties:
+      courseId:
+        type: integer
+      lessonId:
+        type: integer
+    type: object
+  model.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  model.ForgotRequest:
+    properties:
+      email:
+        type: string
+    required:
+    - email
+    type: object
+  model.Lesson:
+    properties:
+      body:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      lessonName:
+        type: string
+    type: object
+  model.LoginRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  model.NewNickname:
+    properties:
+      nickname:
+        type: string
+    type: object
+  model.NewPassword:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  model.NewPromo:
+    properties:
+      email:
+        type: string
+      result:
+        type: string
+    type: object
+  model.Promo:
+    properties:
+      promo_code:
+        type: string
+    type: object
+  model.Rating:
+    properties:
+      nickname:
+        type: string
+      score:
+        type: integer
+    type: object
+  model.Task:
+    properties:
+      audioPath:
+        type: string
+      correctAnswer:
+        type: string
+      id:
+        type: integer
+      lessonID:
+        type: integer
+      options:
+        items:
+          type: string
+        type: array
+      taskText:
+        type: string
+      taskType:
+        type: string
+      userAnswer:
+        type: string
+    type: object
+  model.UserCreateRequest:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - name
+    - password
+    type: object
+  model.UserRating:
+    properties:
+      nickname:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: tatarby.shmyaks.ru API
+  title: TatarByHack Service API
+  version: "1.0"
+paths:
+  /v1/AddCompletedLesson:
+    post:
+      consumes:
+      - application/json
+      description: Добавляет новый урок в список уроков юзера
+      parameters:
+      - description: Запрос на добавление пройденного урока
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.CompleteLesson'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Урок добавлен
+          schema:
+            items:
+              $ref: '#/definitions/model.Lesson'
+            type: array
+        "500":
+          description: Не удалось добавить уроки
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Добавить пройденный урок в прогресс юзера
+      tags:
+      - Lessons
+  /v1/GetCompletedLessons:
+    post:
+      consumes:
+      - application/json
+      description: Возвращает все пройденные юзером уроки
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Уроки получены
+          schema:
+            items:
+              $ref: '#/definitions/model.Lesson'
+            type: array
+        "400":
+          description: Не удалось найти юзера
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить уроки
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить пройденные уроки юзера
+      tags:
+      - Lessons
+  /v1/GetCompletedLessonsByCourse:
+    post:
+      consumes:
+      - application/json
+      description: Возвращает все пройденные юзером уроки в указанном курсе
+      parameters:
+      - description: ID курса
+        in: path
+        name: CourseID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Уроки получены
+          schema:
+            items:
+              $ref: '#/definitions/model.Lesson'
+            type: array
+        "400":
+          description: Не удалось найти юзера
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить уроки
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить пройденные уроки юзера в конкретном курсе
+      tags:
+      - Lessons
+  /v1/add_new_promo:
+    post:
+      consumes:
+      - application/json
+      description: Создает новый промокод для юзера.
+      parameters:
+      - description: Запрос на создание нового промокода
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.NewPromo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Промокод создан
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "500":
+          description: Не удалось создать промокод
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Добавить новый промокод
+      tags:
+      - Promo
+  /v1/courses:
+    get:
+      consumes:
+      - application/json
+      description: Получает список всех курсов
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Список курсов
+          schema:
+            items:
+              $ref: '#/definitions/model.Lesson'
+            type: array
+        "500":
+          description: Не удалось получить курсы
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить все курсы
+      tags:
+      - Courses
+  /v1/courses/{courseID}:
+    get:
+      consumes:
+      - application/json
+      description: Получает курс по указанному id
+      parameters:
+      - description: ID курса
+        in: path
+        name: courseID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Курс по его id
+          schema:
+            items:
+              $ref: '#/definitions/model.Lesson'
+            type: array
+        "400":
+          description: Неверный ID курса
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить курс
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить курс
+      tags:
+      - Courses
+  /v1/courses/{courseID}/lessons:
+    get:
+      consumes:
+      - application/json
+      description: Получает список уроков для определенного курса
+      parameters:
+      - description: ID курса
+        in: path
+        name: courseID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Список уроков
+          schema:
+            items:
+              $ref: '#/definitions/model.Task'
+            type: array
+        "400":
+          description: Неверный ID курса
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить уроки
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить уроки для курса
+      tags:
+      - Tasks
+  /v1/forgot:
+    post:
+      consumes:
+      - application/json
+      description: Инициирует восстановление пароля по email.
+      parameters:
+      - description: Запрос на инициацию восстановления пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.ForgotRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Процесс восстановления начат
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось начать процесс восстановления
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Восстановление
+      tags:
+      - Auth
+  /v1/get_user_rating:
+    post:
+      consumes:
+      - application/json
+      description: Возвращает рейтинг нужного пользователя
+      parameters:
+      - description: Запрос на получения рейтинга пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.UserRating'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Рейтинг получен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось найти пользователя
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить рейтинг
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить рейтинг конкретного пользователя
+      tags:
+      - Rating
+  /v1/lessons/{lessonID}:
+    get:
+      consumes:
+      - application/json
+      description: Получает урок по указанному id
+      parameters:
+      - description: ID урока
+        in: path
+        name: lessonID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Урок по его id
+          schema:
+            items:
+              $ref: '#/definitions/model.Lesson'
+            type: array
+        "400":
+          description: Неверный ID урока
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить урок
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить урок
+      tags:
+      - Lessons
+  /v1/lessons/{lessonID}/tasks:
+    get:
+      consumes:
+      - application/json
+      description: Получает список заданий для определенного урока
+      parameters:
+      - description: ID урока
+        in: path
+        name: lessonID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Список заданий
+          schema:
+            items:
+              $ref: '#/definitions/model.Task'
+            type: array
+        "400":
+          description: Неверный ID урока
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось получить задания
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить задания для урока
+      tags:
+      - Tasks
+  /v1/login:
+    post:
+      consumes:
+      - application/json
+      description: Авторизует пользователя с предоставленным email и паролем.
+      parameters:
+      - description: Запрос на авторизацию пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Пользователь авторизован
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось авторизовать пользователя
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Логин
+      tags:
+      - Auth
+  /v1/newpass:
+    get:
+      consumes:
+      - application/json
+      description: Новый пароль для восстановления пароля по email.
+      parameters:
+      - description: Токен восстановления пароля
+        in: query
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Процесс восстановления завершен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось завершить процесс восстановления
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Новый пароль
+      tags:
+      - Auth
+    post:
+      consumes:
+      - application/json
+      description: Сохранение нового пароля .
+      parameters:
+      - description: Новый пароль пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.NewPassword'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Пароль сохранен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось сохранить пароль
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Добавление нового пароля в БД
+      tags:
+      - Auth
+  /v1/rating:
+    get:
+      consumes:
+      - application/json
+      description: Получает общий рейтинг пользователей
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Рейтинг получен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "500":
+          description: Не удалось получить рейтинг
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Получить рейтинг пользователей
+      tags:
+      - Rating
+  /v1/redeem_promo:
+    post:
+      consumes:
+      - application/json
+      description: Сверяет емайл аккаунта и введенный промокод.
+      parameters:
+      - description: Запрос на проверку промокода
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.Promo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Промокод подтвержден
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "500":
+          description: Не удалось подтвердить промокод
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Проверить промокод
+      tags:
+      - Promo
+  /v1/update_user_rating:
+    put:
+      consumes:
+      - application/json
+      description: Добавляет в рейтинг пользователя полученные баллы
+      parameters:
+      - description: Запрос на обновление рейтинга пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.Rating'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Рейтинг обновлен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось найти пользователя
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+        "500":
+          description: Не удалось обновить рейтинг
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Обновить рейтинг конкретного пользователя
+      tags:
+      - Rating
+  /v1/user_create:
+    post:
+      consumes:
+      - application/json
+      description: Создает нового пользователя с предоставленным email, паролем и
+        именем.
+      parameters:
+      - description: Запрос на создание пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.UserCreateRequest'
+      - description: Реферальный код
+        in: query
+        name: referral_code
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Пользователь успешно создан
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось создать пользователя
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Создать нового пользователя
+      tags:
+      - Auth
+  /v1/user_info:
+    get:
+      consumes:
+      - application/json
+      description: Предоставляет информацию юзера.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Информация получена
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось получить информацию
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: Получить инфо пользователя
+      tags:
+      - Profile
+  /v1/user_nickname:
+    put:
+      consumes:
+      - application/json
+      description: Изменяет никнейм пользователя и сохраняет изменения в базе данных
+      parameters:
+      - description: New Nickname
+        in: body
+        name: nickname
+        required: true
+        schema:
+          $ref: '#/definitions/model.NewNickname'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Никнейм изменен
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось изменить никнейм
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: Изменяет никнейм пользователя
+      tags:
+      - Profile
+  /v1/user_photo:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Загружает фото пользователя и сохраняет URL в базе данных
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Фото загружено
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+        "400":
+          description: Не удалось загрузить фото
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: Загружает фото пользователя
+      tags:
+      - Profile
+securityDefinitions:
+  CookieAuth:
+    in: cookie
+    name: Authtoken
+    type: apiKey
+swagger: "2.0"

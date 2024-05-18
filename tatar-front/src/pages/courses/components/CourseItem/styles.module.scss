@@ -1,0 +1,75 @@
+.courseItem {
+  width: 307px;
+  height: 300px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 24px;
+  border: 1px solid #161616;
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__level {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+
+      p {
+        font-family: GeistRegular;
+        font-size: 14px;
+        opacity: 0.5;
+      }
+
+      &__block {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+
+        span {
+          width: 8px;
+          height: 8px;
+          border-radius: 1000px;
+        }
+      }
+    }
+
+    &__star {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+
+      svg {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &__bottom {
+    p {
+      color: var(--common-white);
+      font-family: GeistRegular;
+      font-size: 15px;
+      opacity: 0.7;
+    }
+  }
+}

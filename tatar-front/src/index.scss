@@ -1,0 +1,49 @@
+:root {
+  --common-white: #ffffff;
+  --common-black: #060606;
+  --common-grey: #c1c2d9;
+  --input-gray: #4a4a51;
+  --button-white: #cecece;
+  --button-white-hover: #d7d7d7;
+}
+
+* {
+  // outline: 1px solid green;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #060606;
+  color: #fff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+// Grandis Extended with font-weight = 500
+@font-face {
+  font-family: GrandisExtendedMedium;
+  src: url("../src/fonts/GrandisExtended/GrandisExtendedMedium.ttf");
+}
+
+// Geist with font-weight = 400
+@font-face {
+  font-family: GeistRegular;
+  src: url("../src/fonts/Geist/Geist-Regular.otf");
+}
+
+// Geist with font-weight = 500
+@font-face {
+  font-family: GeistMedium;
+  src: url("../src/fonts/Geist/Geist-Medium.otf");
+}
+
+.subtitle {
+  color: var(--common-white);
+  font-family: GeistMedium;
+  font-size: 24px;
+}
