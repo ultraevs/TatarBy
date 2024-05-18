@@ -1,0 +1,21 @@
+.userPoints {
+  width: 143px;
+  padding: 16px 21px 70px 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+
+  p {
+    color: var(--common-white);
+    font-family: GeistRegular;
+    font-size: 16px;
+    opacity: 0.7;
+
+    &:nth-child(2) {
+      margin-top: 33px;
+      font-family: GeistMedium;
+      font-size: 42px;
+      line-height: 52.08px;
+    }
+  }
+}

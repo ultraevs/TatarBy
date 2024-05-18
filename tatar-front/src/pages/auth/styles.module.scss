@@ -1,0 +1,92 @@
+.authSection {
+  &__block {
+    h1 {
+      color: var(--common-white);
+      font-family: GrandisExtendedMedium;
+      font-size: 42px;
+      line-height: 53.76px;
+      letter-spacing: 7%;
+
+      opacity: 0.9;
+    }
+
+    form {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        input {
+          padding: 8px 12px;
+          width: 424px;
+          height: 40px;
+          color: var(--input-gray);
+          font-family: GeistRegular;
+          font-size: 16px;
+          background: rgba(25, 25, 31, 0.3);
+          border-radius: 8px;
+          border: 1px solid #232323;
+          outline: none;
+
+          &:nth-child(2) {
+            margin-top: 16px;
+          }
+        }
+
+        p {
+          margin-top: 12px;
+          color: var(--common-white);
+          font-family: GeistRegular;
+          font-size: 16px;
+          opacity: 0.7;
+
+          a {
+            text-decoration: none;
+            color: var(--common-white);
+          }
+        }
+      }
+
+      button {
+        cursor: pointer;
+        margin-top: 32px;
+        padding: 12px 32px;
+        width: 112px;
+        height: 48px;
+        color: var(--button-white);
+        font-family: GeistMedium;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #232323;
+        background-color: rgba(45, 45, 56, 0.4);
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          color: var(--button-white-hover);
+          border: 1px solid rgba(43, 43, 43, 1);
+          background-color: rgba(45, 45, 56, 0.6);
+        }
+      }
+
+      p {
+        margin-top: 16px;
+
+        margin-top: 12px;
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 16px;
+        opacity: 0.7;
+
+        a {
+          text-decoration: none;
+          color: var(--common-white);
+        }
+      }
+    }
+  }
+}
