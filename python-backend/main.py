@@ -6,6 +6,8 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import Response
 import time
+
+
 app = FastAPI(root_path='/ml', docs_url="/swagger", title="TatarBY")
 origins = ["*"]
 app.include_router(router)
