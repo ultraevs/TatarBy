@@ -1,0 +1,52 @@
+.result {
+  padding: 82px 0px 364px;
+  text-align: center;
+
+  h1 {
+    color: var(--common-white);
+    font-family: GeistRegular;
+    font-size: 20px;
+    opacity: 0.6;
+  }
+
+  &__content {
+    position: relative;
+    margin-top: 24px;
+    padding: 159px 0px 64px;
+    border-radius: 24px;
+    border: 1px solid #161616;
+    background: rgba(255, 255, 255, 0.03);
+
+    &__block {
+      p {
+        color: var(--common-white);
+        font-family: GrandisExtendedMedium;
+        font-size: 64px;
+      }
+
+      button {
+        margin-top: 75px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 16px;
+        opacity: 0.8;
+      }
+    }
+
+    &__blur1 {
+      position: absolute;
+      top: 16px;
+      left: 32px;
+    }
+
+    &__blur2 {
+      position: absolute;
+      bottom: 16px;
+      right: 32px;
+    }
+  }
+}

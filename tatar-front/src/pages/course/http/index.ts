@@ -3,7 +3,7 @@ import axios from "axios";
 export const getCourse = async (id: number) => {
   try {
     const response = await axios.get(
-      `https://fromshmyaksto52withlove.shmyaks.ru/v1/courses/${id}`,
+      `https://tatarby.shmyaks.ru/v1/courses/${id}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const getCourse = async (id: number) => {
 export const getAllLessons = async (id: number) => {
   try {
     const response = await axios.get(
-      `https://fromshmyaksto52withlove.shmyaks.ru/v1/courses/${id}/lessons`,
+      `https://tatarby.shmyaks.ru/v1/courses/${id}/lessons`,
       {
         headers: {
           "Content-Type": "application/json",

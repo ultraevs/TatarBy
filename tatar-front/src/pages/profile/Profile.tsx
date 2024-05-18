@@ -11,6 +11,7 @@ import { CourseItem } from "./components/CourseItem";
 import { Progress } from "./components/Progress";
 import { UserPoints } from "./components/UserPoints";
 import { BonusLink } from "../../components/BonusLink";
+import { UserCommercial } from "./components/UserCommercial";
 
 const Profile = () => {
   const [userInfo, setUserInfo] = useState<any>(null);
@@ -31,7 +32,7 @@ const Profile = () => {
 
       const progressResponse = await getProgress();
       if (progressResponse.success) {
-        setProgressInfo(progressResponse.data)
+        setProgressInfo(progressResponse.data);
       }
 
       const statsResponse = await getStats();
@@ -50,7 +51,11 @@ const Profile = () => {
         <div className={styles.profile__activity}>
           <h4 className="subtitle">Активность</h4>
           <div className={styles.profile__activity__items}>
-            <CourseItem progress={progressInfo && progressInfo["completion_percentage"]} />
+            <CourseItem
+              progress={
+                progressInfo && progressInfo["completion_percentage"].toFixed(2)
+              }
+            />
             <UserPoints points={rating?.score} />
             <BonusLink />
           </div>
@@ -58,7 +63,7 @@ const Profile = () => {
         <div className={styles.profile__results}>
           <h4 className="subtitle">Результаты тестов</h4>
           <div className={styles.profile__results__items}>
-            <div></div>
+            {userInfo !== null && <UserCommercial refLink={userInfo.referal} />}
             {statsInfo !== null && <Progress items={statsInfo.slice(0, 4)} />}
           </div>
         </div>

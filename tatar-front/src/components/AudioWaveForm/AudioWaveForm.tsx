@@ -4,18 +4,24 @@ React;
 
 import styles from "./styles.module.scss";
 import { useWavesurfer } from "@wavesurfer/react";
-import mp3 from "../../assets/mp3/sample-15s.mp3";
+import Play from "../../assets/svg/Play.svg";
+import Pause from "../../assets/svg/Pause.svg";
 
-const AudioWaveForm = () => {
+type Props = {
+  url: string;
+};
+
+const AudioWaveForm = ({ url }: Props) => {
   const containerRef = useRef(null);
 
   const { wavesurfer, isPlaying } = useWavesurfer({
     container: containerRef,
-    height: 44,
+    height: 34,
     width: "100%",
     waveColor: "rgba(255, 255, 255, 0.1)",
     progressColor: "rgba(255, 255, 255, 0.3)",
-    url: mp3,
+    cursorWidth: 0,
+    url: url,
     barWidth: 5,
     barGap: 4,
     barRadius: 5,
@@ -24,21 +30,20 @@ const AudioWaveForm = () => {
   const onPlayPause = useCallback(() => {
     wavesurfer && wavesurfer.playPause();
   }, [wavesurfer]);
+  
   return (
-    <>
-      <div style={{display: "flex", background: "red",}}>
-      <button onClick={onPlayPause}>{isPlaying ? "Pause" : "Play"}</button>
-        <div
-          ref={containerRef}
-          style={{
-            width: 270,
-            height: 44,
-            padding: "0px 32px",
-          }}
-        ></div>
-        
-      </div>
-    </>
+    <div className={styles.audioForm}>
+      <button onClick={onPlayPause}>
+        <img src={isPlaying ? Pause : Play} alt="playPause icon" />
+      </button>
+      <div
+        ref={containerRef}
+        style={{
+          width: 167,
+          height: 34,
+        }}
+      ></div>
+    </div>
   );
 };
 
