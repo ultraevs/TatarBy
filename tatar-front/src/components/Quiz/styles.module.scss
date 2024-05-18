@@ -37,6 +37,7 @@
         position: absolute;
         left: 100px;
     }
+
 }
 
 .question__text {
@@ -194,5 +195,21 @@ input[type="radio"] {
         color: #D7D7D7;
         border: 1px solid #2B2B2B;
         background: rgba(45, 45, 56, 0.60);
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .question{
+        width: 90%;
+        padding: 22px;
+
+        &__vector{
+        display: none;
+        }
+    }
+
+    label{
+        max-width: 300px;
     }
 }

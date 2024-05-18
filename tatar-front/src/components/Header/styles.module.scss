@@ -40,6 +40,7 @@
           line-height: 19.84px;
         }
       }
+      
 
       button {
         cursor: pointer;
@@ -62,6 +63,15 @@
         border: 2px solid #6348ff;
         background: #4731c8;
       }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header{
+    padding: 0 20px;
+    nav{
+      display: none;
     }
   }
 }

@@ -21,10 +21,10 @@ const DefaultBonus = () => {
         <Discounts />
         <div className={styles.defaultbonus__partners}>
           <div onClick={handelClick} >
-            <Partners discount="10" description="Любой отечественный фильм на татарском языке" points="50" imageSrc={afisha} left={200} bottom={100} />
+            <Partners discount="Скидка 10%" description="Любой отечественный фильм на татарском языке" points="50 баллов" imageSrc={afisha} left={200} bottom={100} />
           </div>
-          <Partners discount="7" description="Книга на татарском языке" points="30" imageSrc={litres} left={130} bottom={40} />
-          <Partners discount="5" description="Комикс на татарском языке" points="20" imageSrc={chitai} left={130} bottom={63}/>
+          <Partners discount="Скидка 7%" description="Книга на татарском языке" points="30 баллов" imageSrc={litres} left={130} bottom={40} />
+          <Partners discount="Скидка 5%" description="Комикс на татарском языке" points="20 баллов" imageSrc={chitai} left={130} bottom={63}/>
         </div>
       </div>
     </MainLayout>

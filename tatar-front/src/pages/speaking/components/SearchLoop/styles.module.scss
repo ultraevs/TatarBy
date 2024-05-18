@@ -1,4 +1,4 @@
-.bonusLive {
+.searchLoop {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
@@ -7,8 +7,7 @@
   text-align: center;
 
   &__block {
-    width: 960px;
-    margin: 64px 0px 153px;
+    margin: 64px 0px 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,16 +19,36 @@
       letter-spacing: 0.64px;
     }
 
-    div {
-      margin-top: 16px;
+    p {
+      margin-top: 4px;
+      width: 580px;
+      color: var(--common-white);
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.6;
+    }
 
-      span {
-        width: 580px;
+    &__search {
+      margin-top: 61px;
+      padding: 12px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+
+      input {
+        width: 141px;
+        margin-left: 8px;
+        background: transparent;
+        outline: none;
+        border: none;
         color: var(--common-white);
-        font-family: "Inter", sans-serif;
-        font-size: 24px;
-        font-weight: 500;
-        opacity: 0.8;
+        font-family: GeistRegular;
+        font-size: 16px;
+        font-weight: 400;
+        opacity: 0.4;
       }
     }
   }

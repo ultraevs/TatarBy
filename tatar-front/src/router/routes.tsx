@@ -11,6 +11,7 @@ import { Test } from "../pages/test";
 import { Welcome } from "../pages/quiz";
 import { Materials } from "../pages/materials";
 import { DefaultBonus } from "../pages/defaultbonus";
+import { Speaking } from "../pages/speaking";
 
 
 
@@ -24,6 +25,7 @@ const AppRoutes = () => {
         <Route path="/Quiz" element={<Welcome />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/Course/:id" element={<Course />} />
+        <Route path="/Speaking" element={<Speaking />} />
         <Route path="/Materials" element={<Materials />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/DefaultBonus" element={<DefaultBonus/>}/>

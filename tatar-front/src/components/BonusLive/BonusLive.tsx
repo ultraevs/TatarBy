@@ -31,7 +31,7 @@ const BonusLive = () => {
       {duration !== null && (
         <div className={styles.bonusLive}>
           <div className={styles.bonusLive__block}>
-            <h1>До трансляции с розыгрышем осталось</h1>
+            <h1>До розыгрыша осталось</h1>
             <div>
               {duration.years() !== 0 && <span>{-duration.years()} years{" "}</span>}
               {duration.months() !== 0 && <span>{-duration.months()} months{" "}</span>}
