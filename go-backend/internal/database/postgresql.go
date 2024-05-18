@@ -83,7 +83,8 @@ func ConnectDatabase() {
 		id SERIAL PRIMARY KEY,
 		user_id INT REFERENCES tatarby_users(id),
 		course_id INT REFERENCES tatarby_courses(CourseID),
-		lesson_id INT REFERENCES tatarby_lessons(LessonID)
+		lesson_id INT REFERENCES tatarby_lessons(LessonID),
+		score INT
 	);
 
 	CREATE TABLE IF NOT EXISTS tatarby_promo (
