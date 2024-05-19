@@ -8,7 +8,11 @@ import { Profile } from "../pages/profile";
 import { Bonus } from "../pages/bonus";
 import { Lesson } from "../pages/lesson";
 import { Test } from "../pages/test";
-import { Result } from "../pages/result";
+import { Welcome } from "../pages/quiz";
+import { Materials } from "../pages/materials";
+import { DefaultBonus } from "../pages/defaultbonus";
+import { Speaking } from "../pages/speaking";
+
 
 
 const AppRoutes = () => {
@@ -25,6 +29,10 @@ const AppRoutes = () => {
         <Route path="/Lesson/:id" element={<Lesson />} />
         <Route path="/Test/:id" element={<Test />} />
         <Route path="/Test/:id/Result" element={<Result />} />
+        <Route path="/Quiz" element={<Welcome />} />
+        <Route path="/Speaking" element={<Speaking />} />
+        <Route path="/Materials" element={<Materials />} />
+        <Route path="/DefaultBonus" element={<DefaultBonus/>}/>
       </Routes>
     </BrowserRouter>
   );

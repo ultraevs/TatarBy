@@ -34,11 +34,11 @@ const Header = () => {
 
         <div className={styles.header__container__links}>
           <nav>
-            <Link to={"/"}>Главная</Link>
+            <Link to={"/"} onClick={logoClick}>Главная</Link>
             <Link to={"/Speaking"}>Произношение</Link>
             <Link to={"/Courses"}>Грамматика</Link>
             <Link to={"/Materials"}>Материалы</Link>
-            <Link to={"/Bonus"}>Бонусы</Link>
+            <Link to={"/DefaultBonus"}>Бонусы</Link>
           </nav>
           {authToken !== undefined ? (
             <button onClick={profileButtonClick}>Профиль</button>

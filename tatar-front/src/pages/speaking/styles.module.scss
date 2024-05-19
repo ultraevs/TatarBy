@@ -1,0 +1,12 @@
+.courses {
+    padding: 82px 0px 364px;
+  
+    &__items {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 307px);
+      grid-column-gap: calc((100% - (307px * 3)) / 2);
+      row-gap: 20px;
+    }
+  }
+  

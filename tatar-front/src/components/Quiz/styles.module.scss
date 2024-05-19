@@ -196,3 +196,22 @@ input[type="radio"] {
         background: rgba(45, 45, 56, 0.60);
     }
 }
+<<<<<<< HEAD
+=======
+
+@media (max-width: 480px) {
+    
+    .question{
+        width: 90%;
+        padding: 22px;
+
+        &__vector{
+        display: none;
+        }
+    }
+
+    label{
+        max-width: 300px;
+    }
+}
+>>>>>>> origin/front2

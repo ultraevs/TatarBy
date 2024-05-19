@@ -24,3 +24,16 @@ interface LessonItem {
   body: string;
   description: string;
 }
+interface VideoProps {
+  videoUrl: string;
+  videoTitle: string;
+}
+
+interface PartnersProps {
+  discount: string;
+  description: string;
+  points: string;
+  imageSrc: any;
+  left: number; 
+  bottom: number;  
+}
