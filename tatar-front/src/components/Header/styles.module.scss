@@ -40,6 +40,7 @@
           line-height: 19.84px;
         }
       }
+      
 
       button {
         cursor: pointer;
@@ -65,3 +66,15 @@
     }
   }
 }
+<<<<<<< HEAD
+=======
+
+@media (max-width: 480px) {
+  .header{
+    padding: 0 20px;
+    nav{
+      display: none;
+    }
+  }
+}
+>>>>>>> origin/front2

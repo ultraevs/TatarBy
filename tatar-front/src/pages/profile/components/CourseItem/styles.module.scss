@@ -1,25 +1,15 @@
 .courseItem {
   width: 307px;
-  padding: 16px 24px 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.1);
 
   p {
     color: var(--common-white);
-    font-family: GeistRegular;
-    font-size: 16px;
+    font-family: GeistMedium;
+    font-size: 48px;
     opacity: 0.7;
-
-    &:nth-child(2) {
-      margin-top: 4px;
-      font-family: GeistMedium;
-      font-size: 64px;
-    }
-
-    &:nth-child(3) {
-      margin-top: 24px;
-      font-size: 20px;
-      opacity: 0.5;
-    }
   }
 }
