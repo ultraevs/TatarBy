@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getUserInfo = async () => {
   try {
-    const response = await axios.get("http://localhost:8090/v1/user_info", {
+    const response = await axios.get("https://tatarby.shmyaks.ru/v1/user_info", {
       withCredentials: true,
     });
     return { success: true, data: response.data };
@@ -14,7 +14,7 @@ export const getUserInfo = async () => {
 export const getProgress = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:8090/v1/GetCompletedLessons",
+      "https://tatarby.shmyaks.ru/v1/GetCompletedLessons",
       {},
       {
         withCredentials: true,
@@ -28,7 +28,7 @@ export const getProgress = async () => {
 
 export const getStats = async () => {
   try {
-    const response = await axios.get("http://localhost:8090/v1/rating", {
+    const response = await axios.get("https://tatarby.shmyaks.ru/v1/rating", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -42,7 +42,7 @@ export const getStats = async () => {
 export const getRating = async (nickname: string) => {
   try {
     const response = await axios.post(
-      "http://localhost:8090/v1/get_user_rating",
+      "https://tatarby.shmyaks.ru/v1/get_user_rating",
       {
         nickname: nickname,
       },
