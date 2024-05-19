@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import currentTasksSlice from "./slices/currentTasks/currentTasksSlice";
+import currentCourseSlice from "./slices/currentCourse/currentCourseSlice";
 
 export const store = configureStore({
   reducer: {
+    course: currentCourseSlice,
     taskList: currentTasksSlice,
   },
 });

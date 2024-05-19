@@ -69,8 +69,8 @@ const Lesson = () => {
   }, []);
 
   const testHandleCLick = () => {
-    navigate(`/Test/${id}`)
-  }
+    navigate(`/Test/${id}`);
+  };
 
   return (
     <MainLayout>

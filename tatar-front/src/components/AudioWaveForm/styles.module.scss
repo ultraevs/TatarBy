@@ -1,0 +1,15 @@
+.audioForm {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+
+  button {
+    width: 20px;
+    margin-right: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}

@@ -13,8 +13,9 @@ export const getUserInfo = async () => {
 
 export const getProgress = async () => {
   try {
-    const response = await axios.get(
+    const response = await axios.post(
       "http://localhost:8090/v1/GetCompletedLessons",
+      {},
       {
         withCredentials: true,
       }
@@ -27,14 +28,11 @@ export const getProgress = async () => {
 
 export const getStats = async () => {
   try {
-    const response = await axios.get(
-      "https://fromshmyaksto52withlove.shmyaks.ru/v1/rating",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.get("https://tatarby.shmyaks.ru/v1/rating", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     return { success: true, data: response.data };
   } catch (error) {
     return { success: false, error: error };

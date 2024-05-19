@@ -25,7 +25,7 @@ export const currentTasksSlice = createSlice({
       if (action.payload) {
         state.currentIndex += 1;
         state.currentItem = action.payload.item;
-        state.progress += action.payload.progress;
+        state.progress = state.progress + action.payload.progress;
       }
     },
   },

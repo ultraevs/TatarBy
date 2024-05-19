@@ -8,6 +8,7 @@ import { Profile } from "../pages/profile";
 import { Bonus } from "../pages/bonus";
 import { Lesson } from "../pages/lesson";
 import { Test } from "../pages/test";
+import { Result } from "../pages/result";
 
 
 const AppRoutes = () => {
@@ -23,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/Bonus" element={<Bonus />} />
         <Route path="/Lesson/:id" element={<Lesson />} />
         <Route path="/Test/:id" element={<Test />} />
+        <Route path="/Test/:id/Result" element={<Result />} />
       </Routes>
     </BrowserRouter>
   );
