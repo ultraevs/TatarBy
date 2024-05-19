@@ -31,6 +31,39 @@
       background: rgba(255, 255, 255, 0.03);
       border-radius: 36px;
       border: 1px solid rgba(22, 22, 22, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        color: var(--common-white);
+        font-family: GeistMedium;
+        font-size: 36px;
+      }
+
+      p {
+        margin-top: 8px;
+        font-family: GeistRegular;
+        font-size: 20px;
+      }
+
+      span {
+        margin-top: 133px;
+        font-family: GeistMedium;
+        font-size: 36px;
+      }
+      button {
+        margin-top: 140px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--common-white);
+        font-family: GeistRegular;
+        font-size: 16px;
+        opacity: 0.8;
+      }
     }
   }
 }

@@ -40,6 +40,10 @@ const Course = () => {
     dispatch(setCourseID({id: id}))
   };
 
+  const toWeek = () => {
+    navigate(`/Lesson/${10}`)
+  }
+
   return (
     <MainLayout>
       {course !== null && (
@@ -51,7 +55,12 @@ const Course = () => {
                 <h2>Что мы изучим:</h2>
                 <p>{course.description}</p>
               </div>
-              <div className={styles.course__content__photo}></div>
+              <div className={styles.course__content__photo}>
+                <h2>Еженедельный тест</h2>
+                <p>Получите</p>
+                <span>30 бонусов</span>
+                <button onClick={toWeek}>Перейти</button>
+              </div>
             </div>
           </div>
           {lessons !== null && (
