@@ -6,13 +6,19 @@ import { MainLayout } from "../../components/MainLayout";
 import Hero from "../../components/Hero/Hero";
 import Learn from "../../components/Learn/Learn";
 import { Progress } from "../../components/Progress";
+import { Posts } from "../../components/Posts/Posts";
+
+import styles from "./styles.module.scss"
 
 const Main = () => {
   return (
     <MainLayout>
-      <Hero/>
-      <Learn/>
-      <Progress/>
+      <div className={styles.main}>
+        <Hero />
+        <Learn />
+        <Progress />
+        <Posts />
+      </div>
     </MainLayout>
   );
 };

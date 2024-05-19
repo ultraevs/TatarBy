@@ -1,0 +1,50 @@
+.posts {
+    cursor: pointer;
+    margin-top: 164px;
+
+    h3{
+        color: #FFF;
+        font-family: GeistMedium;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+    }
+
+    &__frames{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    &__post {
+        border-radius: 12px;
+        border: 1px solid #161616;
+        background: rgba(255, 255, 255, 0.05);
+
+        width: 307px;
+        height: 300px;
+        padding-bottom: 16px;
+        gap: 12px;
+
+        margin-top: 64px;
+
+        img{
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        p{
+            padding-left: 8px;
+            padding-top: 12px;
+            opacity: 0.6;
+            color: #FFF;
+            -webkit-line-clamp: 4;
+            display: -webkit-box; 
+            -webkit-box-orient: vertical; 
+            overflow: hidden; 
+            font-family: GeistRegular;
+            font-size: 16px;
+        }
+    }
+}
