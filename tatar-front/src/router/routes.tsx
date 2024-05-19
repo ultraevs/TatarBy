@@ -12,7 +12,7 @@ import { Welcome } from "../pages/quiz";
 import { Materials } from "../pages/materials";
 import { DefaultBonus } from "../pages/defaultbonus";
 import { Speaking } from "../pages/speaking";
-
+import { Result } from "../pages/result";
 
 
 const AppRoutes = () => {
