@@ -80,7 +80,7 @@ const Quiz = () => {
         result: calculateScore().toString(),
       });
       const response = await fetch(
-        "https://tatarby.shmyaks.ru/v1/add_new_promo",
+        "http://localhost:8090/v1/add_new_promo",
         {
           method: "POST",
           headers: {

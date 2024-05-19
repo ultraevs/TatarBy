@@ -3,7 +3,7 @@ import axios from "axios";
 export const loginUser = async (input: AuthData) => {
   try {
     const response = await axios.post(
-      "https://tatarby.shmyaks.ru/v1/login",
+      "http://localhost:8090/v1/login",
       {
         email: input.email,
         password: input.password,

@@ -3,7 +3,7 @@ import axios from "axios";
 export const getLesson = async (id: number) => {
   try {
     const response = await axios.get(
-      `https://tatarby.shmyaks.ru/v1/lessons/${id}`,
+      `http://localhost:8090/v1/lessons/${id}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const getLesson = async (id: number) => {
 export const getTaskStatus = async (id: number) => {
   try {
     const response = await axios.post(
-      "https://tatarby.shmyaks.ru/v1/GetCompletedLessonsByCourse",
+      "http://localhost:8090/v1/GetCompletedLessonsByCourse",
       {
         CourseID: id,
       },

@@ -7,17 +7,22 @@ import styles from "./styles.module.scss";
 import checkProfile from "../../../../assets/svg/checkProfile.svg";
 import copyProfile from "../../../../assets/svg/copy.svg";
 import { givePromo } from "./http";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   refLink: string;
 };
 
 const UserCommercial = ({ refLink }: Props) => {
+  const navigate = useNavigate();
   const [input, setInput] = useState<any>(null);
   const handleClick = () => {
-    console.log("pip");
     givePromo(input);
   };
+
+  const toBonus = () => {
+    navigate("/DefaultBonus")
+  }
   return (
     <div className={styles.userCommercial}>
       <div className={styles.userCommercial__promo}>
@@ -40,7 +45,7 @@ const UserCommercial = ({ refLink }: Props) => {
         </button>
       </div>
       <div className={styles.userCommercial__link}>
-        <button>
+        <button onClick={toBonus}>
           <span>Бонусная программа</span>
         </button>
       </div>

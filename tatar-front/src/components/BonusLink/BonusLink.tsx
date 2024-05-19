@@ -6,8 +6,10 @@ import styles from "./styles.module.scss";
 
 import moment from "moment";
 import lock from "../../assets/svg/lock.svg";
+import { useNavigate } from "react-router-dom";
 
 const BonusLink = () => {
+  const navigate = useNavigate()
   const [duration, setDuration] = useState<any>(null);
 
   useEffect(() => {
@@ -27,6 +29,10 @@ const BonusLink = () => {
     return null;
   }
 
+  const toBonus = () => {
+    navigate("/Bonus")
+  }
+
   return (
     <div className={styles.bonusLink}>
       <div className={styles.bonusLink__top}>
@@ -36,7 +42,7 @@ const BonusLink = () => {
         </p>
       </div>
       <div className={styles.bonusLink__content}>
-        <div className={styles.bonusLink__content__time}>
+        <div className={styles.bonusLink__content__time} onClick={toBonus}>
           Осталось{" "}
           {duration.years() !== 0 && <span>{-duration.years()} years </span>}
           {duration.months() !== 0 && <span>{-duration.months()} months </span>}

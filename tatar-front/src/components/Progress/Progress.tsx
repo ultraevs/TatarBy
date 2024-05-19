@@ -10,7 +10,7 @@ const Progress = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://tatarby.shmyaks.ru/v1/rating"
+          "http://localhost:8090/v1/rating"
         );
         setProfileData(response.data);
       } catch (error) {

@@ -3,7 +3,7 @@ import axios from "axios";
 export const createUser = async (input: RegisterData) => {
   try {
     const response = await axios.post(
-      "https://tatarby.shmyaks.ru/v1/user_create",
+      "http://localhost:8090/v1/user_create",
       {
         email: input.email,
         name: input.nickname,
