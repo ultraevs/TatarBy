@@ -49,3 +49,11 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0 20px;
+    left: auto;
+    width: 100%;
+  }
+}

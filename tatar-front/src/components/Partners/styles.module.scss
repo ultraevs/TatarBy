@@ -1,0 +1,53 @@
+.partners {
+    cursor: pointer;
+    width: 307px;
+    height: 200px;
+    border-radius: 12px;
+    border: 1px solid #161616;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), rgba(255, 255, 255, 0.05);
+
+    padding: 20px 48px 16px 26px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+
+        gap: 4px;
+        p:nth-child(1){
+            opacity: 0.9;
+
+            color: #FFF;
+            font-family: GeistRegular;
+            font-size: 20px;
+        }
+
+        &__des{
+            opacity: 0.9;
+
+            color: #FFF;
+            font-family: GeistRegular;
+            font-size: 16px;
+        }
+    }
+
+    &__costs{
+        p{
+            opacity: 0.9;
+
+            color: #FFF;
+            font-family: GeistRegular;
+            font-size: 16px;
+        }
+    }
+
+}
+.container__partners{
+    img{
+        cursor: pointer;
+        position: relative;
+    }
+}

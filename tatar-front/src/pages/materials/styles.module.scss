@@ -1,0 +1,43 @@
+.materials {
+    padding: 82px 0px 364px;
+}
+
+.musics {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+  
+    &__item {
+      border-bottom: 1px solid rgba(56, 56, 56, 1);
+      div {
+        max-width: 960px;
+        margin: 0 auto;
+        height: 64px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+  
+        p {
+          color: var(--common-white);
+          font-family: GeistRegular;
+          font-size: 20px;
+          line-height: 24.8px;
+          opacity: 0.9;
+        }
+  
+        button {
+          cursor: pointer;
+          border: none;
+          outline: none;
+          background: transparent;
+          color: var(--common-white);
+          font-family: GeistRegular;
+          font-size: 20px;
+          line-height: 24.8px;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  

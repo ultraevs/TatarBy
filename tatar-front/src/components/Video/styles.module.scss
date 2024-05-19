@@ -1,0 +1,25 @@
+.video__container {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 96px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 960px;
+  height: 600px; 
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  p {
+    opacity: 0.6;
+
+    color: #FFF;
+    text-align: center;
+    font-family: "Geist", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+  }
+}

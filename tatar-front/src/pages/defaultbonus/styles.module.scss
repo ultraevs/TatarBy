@@ -1,0 +1,13 @@
+.defaultbonus {
+    padding: 82px 0px 364px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    &__partners{
+      display: flex;
+      gap: 20px;
+    }
+  }
+  

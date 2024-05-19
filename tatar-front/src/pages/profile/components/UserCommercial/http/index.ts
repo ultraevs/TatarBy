@@ -3,7 +3,7 @@ import axios from "axios";
 export const givePromo = async (promo: string) => {
   try {
     const response = await axios.post(
-      "http://localhost:8090/v1/redeem_promo",
+      "https://tatarby.shmyaks.ru/v1/redeem_promo",
       {
         promo_code: promo,
       },

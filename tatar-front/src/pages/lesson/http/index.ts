@@ -19,7 +19,7 @@ export const getLesson = async (id: number) => {
 export const getTaskStatus = async (id: number) => {
   try {
     const response = await axios.post(
-      "http://localhost:8090/v1/GetCompletedLessonsByCourse",
+      "https://tatarby.shmyaks.ru/v1/GetCompletedLessonsByCourse",
       {
         CourseID: id,
       },
