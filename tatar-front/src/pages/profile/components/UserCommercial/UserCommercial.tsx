@@ -16,8 +16,10 @@ type Props = {
 const UserCommercial = ({ refLink }: Props) => {
   const navigate = useNavigate();
   const [input, setInput] = useState<any>(null);
+
   const handleClick = () => {
     givePromo(input);
+    window.location.reload();
   };
 
   const toBonus = () => {
