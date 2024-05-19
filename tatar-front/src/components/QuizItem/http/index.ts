@@ -7,7 +7,7 @@ export const addCompletedLesson = async (
 ) => {
   try {
     const response = await axios.post(
-      "http://localhost:8090/v1/AddCompletedLesson",
+      "https://tatarby.shmyaks.ru/v1/AddCompletedLesson",
       {
         courseId: courseID,
         lessonId: lessonID,
@@ -25,7 +25,7 @@ export const addCompletedLesson = async (
 
 export const getUserInfo = async () => {
   try {
-    const response = await axios.get("http://localhost:8090/v1/user_info", {
+    const response = await axios.get("https://tatarby.shmyaks.ru/v1/user_info", {
       withCredentials: true,
     });
     return { success: true, data: response.data };
@@ -37,7 +37,7 @@ export const getUserInfo = async () => {
 export const updateUserRaiting = async (nickname: string, score: number) => {
   try {
     const response = await axios.put(
-      "http://localhost:8090/v1/update_user_rating",
+      "https://tatarby.shmyaks.ru/v1/update_user_rating",
       {
         nickname: nickname,
         score: score,
