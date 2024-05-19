@@ -3,6 +3,8 @@ import React from "react";
 React;
 
 import styles from "./styles.module.scss";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 type Props = {
   progress: string;
@@ -11,9 +13,17 @@ type Props = {
 const CourseItem = ({ progress }: Props) => {
   return (
     <div className={styles.courseItem}>
-      <p>Изучено</p>
-      <p>{progress}%</p>
-      <p>Среди всех курсов</p>
+      <div style={{ width: 164, height: 164 }}>
+        <CircularProgressbar
+          value={progress}
+          text={progress + "%"}
+          styles={buildStyles({
+            trailColor: 'rgba(255, 255, 255, 0.15);',
+            pathColor: `grey`,
+            textColor: "#fff",
+          })}
+        />
+      </div>
     </div>
   );
 };

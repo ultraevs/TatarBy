@@ -53,7 +53,7 @@ const Profile = () => {
           <div className={styles.profile__activity__items}>
             <CourseItem
               progress={
-                progressInfo && progressInfo["completion_percentage"].toFixed(2)
+                progressInfo && progressInfo["completion_percentage"].toFixed(0)
               }
             />
             <UserPoints points={rating?.score} />
